@@ -123,3 +123,8 @@ nav ul li {
 .user-card:hover .user-update__logo {
   opacity: 0.45;
 }
+
+
+.user-update__logo--off {
+  display: none !important;
+}

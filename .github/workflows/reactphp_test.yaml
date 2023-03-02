@@ -1,0 +1,19 @@
+name: ReactPhp test
+on: 
+  workflow_dispatch:
+    branches:
+      - "main"
+jobs:
+  test-react:
+    runs-on: ubuntu-latest
+    - name: checkout code
+      uses: action/checkout@v3
+    - name: install Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: install React and dependencies 
+      run: npm install
+     
+
+  

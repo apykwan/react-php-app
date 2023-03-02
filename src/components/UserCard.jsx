@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
@@ -6,6 +7,16 @@ import { AiFillEdit } from "react-icons/ai";
 import { formatPhoneNumber } from '../helpers/util';
 
 export default function UserCard({ user }) {
+    const [logoClass, setLogoClass] = useState('');
+    
+    const removeClass = () => {
+        setLogoClass('');
+    };
+
+    const addClass = () => {
+        setLogoClass('user-update__logo--off');
+    };
+
     const handleDelete = id => async (event) => {
         event.stopPropagation();
         try {
@@ -32,11 +43,13 @@ export default function UserCard({ user }) {
                     id={user.id} 
                     className="user-delete__btn"
                     onClick={handleDelete(user.id)}
+                    onMouseOver={addClass}
+                    onMouseOut={removeClass}
                 >
                     Delete
                 </button>
                 
-                <AiFillEdit className="user-update__logo" />
+                <AiFillEdit className={`user-update__logo ${logoClass}`} />
             </Link>
         </div>
     );
