@@ -88,6 +88,7 @@ nav ul li {
 }
 
 .user-card {
+  position: relative;
   padding: 5px;
   border: 1px solid #646cff;
   margin-bottom: 10px;
@@ -105,4 +106,20 @@ nav ul li {
 .user-delete__btn:hover {
   background-color: crimson;
   color: white;
+}
+
+.user-update__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.75rem;
+  opacity: 0;
+  color: #90EE90;
+  z-index: 99;
+  transition: transform 1s ease;
+}
+
+.user-card:hover .user-update__logo {
+  opacity: 0.45;
 }

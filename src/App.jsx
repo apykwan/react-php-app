@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import { Toaster } from 'react-hot-toast';
 
 import ListUser from './pages/ListUser';
@@ -7,6 +8,7 @@ import EditUser from './pages/EditUser';
 import Navbar from './components/Navbar';
 
 function App() {
+	axios.defaults.baseURL = 'http://localhost:8088/reactphp/api';
 	return (
 		<div className="App">
 			<h5>React / PHP / MYSQL Stack APP</h5>

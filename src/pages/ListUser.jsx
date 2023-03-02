@@ -8,7 +8,7 @@ export default function ListUser() {
     const [users, setUsers] = useState([]);
     const fetchUsers = async () => {
         try {
-            const { data } = await axios.get('http://localhost:8088/reactphp/api/');
+            const { data } = await axios.get('/');
             setUsers(data);
         } catch (err) {
             toast.error('Failed to fetch users from database');
@@ -18,7 +18,6 @@ export default function ListUser() {
     useEffect(() => {
         fetchUsers();
     }, []);
-
     return (
         <div className="user-container">
             {users.length > 1 && users.map(user => <UserCard key ={user.id} user={user} />)}
