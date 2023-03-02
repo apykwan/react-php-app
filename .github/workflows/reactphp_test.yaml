@@ -14,5 +14,5 @@ jobs:
           node-version: 16
       - name: install React and dependencies
         run: npm install
-      - name: run the app
-        run: npm run dev
+      - name: build the app
+        run: npm run build
